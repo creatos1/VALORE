@@ -1,0 +1,108 @@
+@use "base/variables" as v;
+
+.login {
+  background-color: #14749b;
+  background-image: linear-gradient(
+    43deg,
+    #14749b 0%,
+    #41aa54 46%,
+    #fea621 100%
+  );
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.loginContainer {
+  margin: 0 auto;
+  width: 30%;
+  height: 80vh;
+  border-radius: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  background-color: v.$white;
+
+  
+}
+
+.loginLogo {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 2rem;
+
+
+  
+  img {
+    max-width: 50%;
+  }
+}
+
+.loginFormInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+    
+}
+
+.sectionLoginButton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+
+    .loginButton {
+        padding: 1.2rem;
+        border-radius: 50%;
+        border: none;
+        color: v.$white;
+        background-color: v.$bluePrimary;
+        cursor: pointer;
+    }
+}
+
+.sectionLoginFooter{
+
+    &::before {
+        display: block;
+        content: "";
+        margin-left: -.1rem;
+        width: 100.6%;
+        height: .5rem;
+    
+        
+        background: rgb(20,116,155);
+        background: linear-gradient(43deg, rgba(20,116,155,1) 20%, rgba(65,170,84,1) 50%, rgba(254,166,33,1) 100%);
+    }
+
+    div {
+        display: flex;
+        justify-content: right;
+        padding: 2rem;
+
+        span {
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                font-size: 1.7rem;
+            }
+
+            &::after {
+                display: block;
+                content: "";
+                margin-top: -1.1rem;
+                margin-left: -.5rem;
+                width: 110%;
+                height: .5rem;
+                border-radius: .2rem;
+            
+                
+                background: v.$yellowPrimary;
+            }
+        }
+    }
+}

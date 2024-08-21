@@ -1,0 +1,64 @@
+@use "base/variables" as v;
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .data-table th {
+    background-color: v.$white;
+  }
+  
+  
+  .edit-button {
+    background: none;
+    border: none;
+    color: #6366f1;
+    cursor: pointer;
+    text-decoration: underline;
+
+    .img-profile {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      border: 0.2rem solid v.$black;
+      cursor: pointer;
+  
+      &:hover{
+        border: 0.2rem solid v.$gray;
+        padding: .2rem;
+      }
+  }
+  }
+  
+  .edit-button:hover {
+    color: #4f46e5;
+  }
+
+  .roleContent {
+    display: inline-flex;
+    align-items: center;
+    color: v.$white;
+    border-radius: 3rem;
+    padding-right: .6rem;
+}
+
+.roleAdmin {
+    background-color: v.$bluePrimary;
+}
+
+.roleDirector {
+    background-color: v.$greenPrimary;
+}
+
+.roleMD{
+  background-color: v.$yellowPrimary;
+}

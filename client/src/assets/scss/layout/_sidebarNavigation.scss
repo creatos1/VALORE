@@ -1,0 +1,268 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.buttonSidebar {
+  background-color: v.$black;
+  border: none;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  margin: 2.5rem 0 2.5rem 0.5rem;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    background-color: v.$white;
+    height: 0.2rem;
+    width: 2rem;
+    position: absolute;
+    transition: all 0.3s ease;
+  }
+
+  &::before {
+    top: 1.3rem;
+  }
+
+  &::after {
+    top: 2rem;
+  }
+}
+
+.buttonSidebar.notClicked {
+  &::before {
+    top: 1.3rem;;
+    transform: rotate(0);
+  }
+
+  &::after {
+    top: 2rem;
+    transform: rotate(0);
+  }
+}
+
+.buttonSidebar.clicked {
+  &::before {
+    top: 1.6rem;
+    transform: rotate(135deg);
+  }
+
+  &::after {
+    top: 1.6rem;
+    transform: rotate(-135deg);
+  }
+}
+
+// Fin de los estilos para el boton
+
+.seccion-nav {
+  background-color: v.$black;
+  width: 5rem;
+  height: 80vh;
+  margin-top: 1rem;
+  border-radius: 0 3rem 3rem 0;
+  padding: 2rem 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+}
+
+.seccion-sidebar-logo {
+  width: 3rem;
+
+  .sidebar-logo {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.sidebar {
+  color: v.$white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: v.$black;
+  padding: 4rem 0;
+
+  position: absolute;
+  top: 5rem;
+  left: 0;
+
+  transition: all 0.5s ease;
+  border-radius: 0 3rem 3rem 0;
+
+  @include m.telefonoMini {
+     padding: 0;
+  }
+}
+
+.sidebar.clicked {
+  width: 16rem;
+}
+.sidebar.notClicked {
+  width: 5rem;
+}
+
+.sidebar-item {
+  @include m.miniHeight {
+    margin: 2rem 0;
+    
+  }
+
+  @include m.telefonoMini {
+    margin: 2rem 0;
+  }
+
+
+
+  width: 100%;
+  padding: 1rem 0;
+  color: v.$white;
+  cursor: pointer;
+  margin: 3rem 0;
+
+  display: flex;
+  padding-left: 1rem;
+  // gap: 2.5rem;
+
+  &:hover {
+    border-right: 0.4rem solid v.$white;
+
+    .container-icon {
+      @include m.iconHover(v.$white);
+    }
+
+  
+}
+
+  
+
+  
+
+  .span{
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  .span.clicked {
+    // display: inline;
+    width: 100%;
+    padding-left: 2.5rem;
+  }
+  .span.notClicked {
+    // display: none;
+    width: 0%;
+    padding-left: 0;
+  }
+}
+
+.sidebar-item.active{
+  border-right: 0.4rem solid v.$white;
+}
+
+// Fin de los estilos del nav
+
+.profile {
+  height: 4rem;
+  padding: .5rem 1rem;
+  // border: .2rem solid v.$white;
+  border-radius: 1.1rem;
+  background-color: v.$black;
+  color: v.$white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+
+  .img-profile {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover{
+      border: 0.2rem solid v.$gray;
+      padding: .2rem;
+    }
+}
+}
+
+.profile.profileClicked {
+  width: 20rem;
+  margin-left: 15rem;
+}
+
+.profile.notProfileClicked {
+  width: 3rem;
+  margin-left: 0;
+}
+
+.opcions-profile {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.opcions-profile.profileClicked {
+  display: flex;
+
+}
+
+.opcions-profile.notProfileClicked {
+  display: none;
+}
+
+.info-profile{
+  padding: 0 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  h4{
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: v.$gray;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.powerOf{
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+
+  img {
+    width: 100%;
+    height: auto;
+    filter: invert(18%) sepia(97%) saturate(6931%) hue-rotate(358deg) brightness(109%) contrast(112%);
+    transition: all .3s ease;
+
+    &:hover{
+      border: none;
+      padding: 0;
+      opacity: .5;
+    
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.venta-form {
+    padding: 4rem;
+    width: 60%;
+    margin-right: 8rem;
+}
+
+.form-group {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionVenta {
+    display: flex;
+    padding: 4rem 0;
+    justify-content: center;
+}
+
+.navInfoPrice {
+    padding: 4rem;
+    height: min-content;
+}

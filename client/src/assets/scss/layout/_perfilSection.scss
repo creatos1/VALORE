@@ -1,0 +1,132 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+// --------------------- Perfil Section -----------------------
+
+    // --------------- Info Column ----------------------
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    h3 {
+        margin-bottom: 0;
+    }
+    .info-column{
+        display: flex;
+        align-items: center;
+        a {
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+            height: 90%;
+        }
+    }
+}
+.info-column {
+    display: flex;
+    gap: 2rem;
+}
+
+.user-info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    background-color: v.$white;
+    color: v.$black;
+    border-radius: .5rem;
+    padding: 1rem;
+    box-shadow: v.$box-shadow;
+
+    .info-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: .1rem;
+
+        .user-rol {
+            color: v.$greenPrimary;
+            opacity: .8;
+        }
+    }
+
+    .img-profile {
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+        cursor: pointer;
+    
+        &:hover{
+          border: 0.2rem solid v.$gray;
+          padding: .2rem;
+        }
+    }
+
+}
+
+// ------------------------------------ Setting column ---------
+.setting-column {
+    h3 {
+        margin-top: 0;
+        text-align: left;
+    }
+
+    margin-bottom: 3rem;
+}
+
+.settings-box {
+    width: 85%;
+    background-color: v.$white;
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: v.$box-shadow;
+
+    form {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        
+    }
+
+    span {
+        color: v.$gray;
+    }
+
+}
+
+.settings-title {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.settings-fieldset {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+
+    border: none;
+    .btn-submit {
+        width: 30%;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+}
+
+
+
+.section-codigo{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+
+    .settings-input {
+        margin: 0;
+    }
+    button {
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+}

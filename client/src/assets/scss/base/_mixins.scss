@@ -1,0 +1,90 @@
+@use 'base/variables' as v;
+
+/** Media Queries **/
+@mixin telefonoMini {
+    @media (max-width: #{v.$telefono}) and (max-height: 695px) {
+        @content;
+    }
+}
+
+@mixin miniHeight {
+    @media (max-height: #{790px}) {
+        @content;
+    }
+}
+
+
+@mixin telefono {
+    @media (min-width: #{v.$telefono}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{v.$tablet}) {
+        @content;
+    }
+}
+  
+@mixin desktop {
+    @media (min-width: #{v.$desktop}) {
+        @content;
+    }
+}
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+
+@mixin boton($bgColor, $display : inline-block) {
+    background-color: $bgColor;
+    color: v.$white;
+    font-weight: v.$bold;
+    text-decoration: none;
+    padding: 1.2rem 2rem;
+    text-align: center;
+    margin-top: 1rem;
+
+    display: $display;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+
+    &:hover {
+        background-color: darken($bgColor, 5);
+        cursor: pointer;
+    }
+}
+
+@mixin botonIcon($bgColor, $display : flex) {
+    background-color: $bgColor;
+    color: v.$white;
+    font-weight: v.$bold;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    text-align: center;
+    margin-top: 2rem;
+    display: $display;
+    border: none;
+    gap: .4rem;
+
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    align-items: center;
+
+    &:hover {
+        background-color: darken($bgColor, 5);
+        cursor: pointer;
+    }
+}
+
+@mixin iconHover ($color: v.$black) {
+    .notFull-icon {
+        stroke: $color;
+        
+      }
+      .full-icon {
+        fill: $color
+      }
+}

@@ -1,0 +1,34 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.section-column {
+    margin-bottom: 3rem;
+}
+
+.section-box {
+    width: 85%;
+    background-color: v.$white;
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: v.$box-shadow;
+    overflow: hidden;
+
+    .container-table{
+      overflow-x: auto;
+    }
+}
+
+/* Estilos específicos para la imagen expandida */
+.expanded-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+    
+
+ 
+
+  
+  

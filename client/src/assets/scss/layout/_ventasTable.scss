@@ -1,0 +1,25 @@
+
+@use "base/variables" as v;
+
+.typeAfiliado {
+    background-color: v.$greenPrimary;
+}
+
+.typePublico {
+    background-color: v.$yellowPrimary;
+}
+
+.typeSolicitada {
+    background-color: v.$greenPrimary;
+}
+
+.typeNoSolicitada {
+    background-color: v.$gray;
+}
+
+.export-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2rem;
+}

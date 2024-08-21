@@ -1,0 +1,98 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+
+.mainGestion {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.opcionsGestion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+
+    @include m.desktop {
+        @include m.grid(4, 1rem);
+    }
+}
+
+//-----------ChartsGestion---------------------------
+
+.chartsGestion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+
+    @include m.grid(3, 1rem);
+
+
+    // @include m.telefono {
+    //     display: grid;
+    //     flex-direction: column;
+    //     gap: 1rem;
+    // }
+}
+
+.containerGrid{
+    padding: 1rem;
+}
+
+// ----------------- OpcionesGestion -------------------
+.opcionGestion {
+    padding: 1rem;
+}
+
+.opcionesInfo {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+
+    .icon {
+        margin-top: 1rem;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        h4{
+            margin: 0;
+        }
+        span {
+            color: v.$gray;
+        }
+    }
+}
+
+.contentButton {
+    display: flex;
+    justify-content: end;
+}
+
+
+// Colores de icons
+.opcionBlue {
+    .icon {
+        color: v.$bluePrimary;
+        stroke: v.$bluePrimary;
+    }
+}
+
+.opcionYellow {
+    .icon {
+        color: v.$yellowPrimary;
+        stroke: v.$yellowPrimary;
+    }
+}
+
+.opcionGreen {
+    .icon {
+        color: v.$greenPrimary;
+        stroke: v.$greenPrimary;
+    }
+}

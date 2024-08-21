@@ -1,0 +1,231 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.container-icon {
+    width: 2.5rem;
+    height: auto;
+}
+
+.seccion {
+    margin-top: calc(v.$separacion / 2);
+    margin-bottom: calc(v.$separacion / 2);
+}
+.contenido-centrado {
+    max-width: 800px;
+}
+
+.alinear-derecha {
+    display: flex;
+    justify-content: flex-end;
+}
+.width100 {
+    width: 100%;
+}
+
+// -------------------------------------- botones ------------------------------------------------
+.btn-blue {
+    @include m.boton(v.$bluePrimary, block);
+}
+
+.btn-yellow {
+    @include m.boton(v.$yellowPrimary);
+}
+
+.btn-red {
+    @include m.boton(v.$red);
+}
+
+.btn-green {
+    @include m.boton(v.$greenPrimary);
+}
+
+.btn-yellow-icon {
+    @include m.botonIcon(v.$yellowPrimary);
+}
+
+.btn-red-icon {
+    @include m.botonIcon(v.$red);
+}
+
+.btn-green-icon {
+    @include m.botonIcon(v.$greenPrimary);
+}
+
+.btn-blue-icon {
+    @include m.botonIcon(v.$bluePrimary);
+}
+
+// ---------------------------- title --------------------
+.titleh1 {
+    text-align: left;
+    margin: 1rem 0 .67rem 0;
+
+    span{
+        display: inline-block;
+
+        &::after {
+            display: block;
+            content: "";
+            margin-top: -1rem;
+            width: 140%;
+            height: .5rem;
+            border-radius: 2rem;
+            
+            background: rgb(20,116,155);
+            background: linear-gradient(90deg, rgba(20,116,155,1) 20%, rgba(65,170,84,1) 50%, rgba(254,166,33,1) 100%);
+        }
+    }
+}
+
+.glassmorphism {
+  background: rgba(249, 243, 243, 0.21);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.7px);
+  -webkit-backdrop-filter: blur(6.7px);
+  border: 1px solid rgba(249, 243, 243, 0.04);
+} 
+
+// Forms
+.input {
+    outline: none;
+
+    border: none;
+    background-color: #BBD7E2;
+    color: v.$gray;
+
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: .8rem;
+
+    transition: border 0.2s ease-in-out;
+
+
+}
+
+.input:focus, .inputPantalla:focus {
+    border: .4rem solid;
+    border-image: linear-gradient(
+        to right,
+        #14749b 0%,
+        #41aa54 46%,
+        #fea621 100%
+    ) 1;
+    color: v.$black;
+}
+
+.inputPantalla {
+    outline: none;
+
+    border: none;
+    background-color: #BBD7E2;
+    color: v.$gray;
+
+    padding: .5rem;
+    margin-bottom: 2rem;
+    border-radius: .8rem;
+
+    transition: border 0.2s ease-in-out;
+}
+
+.box {
+    background-color: v.$white;
+    border-radius: 1rem;
+    box-shadow: v.$box-shadow;
+}
+// ------------------------- search ------------------------
+
+.container{
+    margin: calc(v.$separacion / 2) 0;
+}
+
+.search-bar {
+    width: 90%;
+    max-width: 450px;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    border-radius: 3em;
+    padding: 1em 2em;
+}
+
+.search-bar input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 1.5em 2em;
+    font-size: 1em;
+    color: v.$gray;
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+        color: v.$black;
+    }
+}
+
+.search-bar div {
+    border: 0;
+    width: 2em;
+    margin-top: 1rem; 
+    background: transparent;
+
+    .icon {
+        stroke: v.$greenPrimary;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .search-bar button {
+        display: none; /* Ocultar el botón */
+    }
+    
+    .search-bar{
+        padding: 0;
+        min-width: 170px;
+    }
+
+}
+
+// cajas ocultas
+
+.box-modal {
+  position: fixed;
+  top: 20%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  z-index: 1001;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 40rem;
+}
+
+.box-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.close-button {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.contentBox {
+    button {
+        margin: 0 auto;
+    }
+}

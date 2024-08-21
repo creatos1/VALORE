@@ -1,0 +1,18 @@
+
+@use "base/variables" as v;
+
+.typeCompra_x_paga_y {
+    background-color: v.$greenPrimary ;
+}
+
+.typePorcentaje_descuento {
+    background-color: v.$yellowPrimary;
+}
+
+.typePor_cada_x_te_descontamos_y {
+    background-color: v.$bluePrimary;
+}
+
+#promocionesTable{
+    width: 100%;
+}
